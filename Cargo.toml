@@ -1,0 +1,23 @@
+[package]
+name = "mini_clipboard"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+eframe = "0.29"
+egui = "0.29"
+arboard = "3.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+parking_lot = "0.12"
+once_cell = "1.19"
+
+[target.'cfg(windows)'.dependencies.windows]
+version = "0.58"
+features = [
+    "Win32_Foundation",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging"
+]
